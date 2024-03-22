@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Chart Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div style="width: 80%; margin: 0 auto;">
+    <canvas id="liveChart"></canvas>
+  </div>
+
+  <script>
+    // Function to fetch the JSON data from the FastAPI endpoint
+    async function fetchData() {
+      try {
+        const response = await fetch('http://localhost:8000/api/data/');
+        const data = await response.json();
+        updateChart(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    // Function to update the chart with the new data
+    function updateChart(data) {
+      const times = data.map(entry => entry.curr_time);
+      const values = data.map(entry => entry.oi_pcr_avg);
+
+      // Get the chart canvas element
+      const ctx = document.getElementById('liveChart').getContext('2d');
+
+      // Initialize the chart or get the existing chart instance
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: times,
+          datasets: [
+            {
+              label: 'PCR Average',
+              data: values,
+              borderColor: 'blue',
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            x: {
+              type: 'time',
+              time: {
+                unit: 'second',
+                displayFormats: {
+                  second: 'h:mm:ss',
+                },
+              },
+            },
+            y: {
+              beginAtZero: true,
+              suggestedMax: 1.0, // Adjust this value based on your data range
+            },
+          },
+        },
+      });
+    }
+
+    // Call the fetchData function every few seconds to update the chart
+    setInterval(fetchData, 5000); // Update every 5 seconds (adjust as needed)
+
+    // Call fetchData initially to populate the chart with initial data
+    fetchData();
+  </script>
+</body>
+</html>

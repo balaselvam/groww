@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three Tables in Parallel Design</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex; /* Use flexbox layout */
+            justify-content: space-around; /* Distribute items with equal space around them */
+            margin: 20px;
+        }
+
+        .table {
+            flex: 1; /* Each table occupies equal space */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table">
+            <h2>Table 1</h2>
+            <table>
+                <!-- Table 1 content goes here -->
+            </table>
+        </div>
+
+        <div class="table">
+            <h2>Table 2</h2>
+            <table>
+                <!-- Table 2 content goes here -->
+            </table>
+        </div>
+
+        <div class="table">
+            <h2>Table 3</h2>
+            <table>
+                <!-- Table 3 content goes here -->
+            </table>
+        </div>
+    </div>
+</body>
+</html>
