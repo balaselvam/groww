@@ -9,7 +9,7 @@ app = connection.app
 async def startup_event():
     url = "https://groww.in/v1/api/option_chain_service/v1/option_chain/maruti-suzuki-india-ltd?expiry=2023-11-30"  # Replace this URL with the data source URL
     url_next = "https://groww.in/v1/api/option_chain_service/v1/option_chain/maruti-suzuki-india-ltd?expiry=2023-11-30"
-    url_far = "https://groww.in/v1/api/option_chain_service/v1/option_chain/maruti-suzuki-india-ltd?expiry=2023-11-30"
+    url_far = "https://groww.in/v1/api/option_chain_service/v1/option_chain/maruti-suzuki-india-ltd?expiry=2023-12-30"
     filename = "dw_data.json"  # Choose the desired filename for the saved data
     filename_next = "dw_data_next.json"
     filename_far = "dw_data_far.json"
