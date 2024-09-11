@@ -6,6 +6,7 @@ import check_json
 from pydantic import BaseModel 
 import json 
 
+#connection creation
 app = connection.app
 
 app.state.data_list = {}
