@@ -5,7 +5,11 @@
         "callOption": {
           "open": 2745,
           "high":2747,
+<<<<<<< HEAD
           "low": 2748,
+=======
+          "low": 2745,
+>>>>>>> 5d50bfe (back to old data 2745)
           "close": 2285,
           "ltp": 2745,
           "dayChange": 460,
