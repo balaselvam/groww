@@ -4,7 +4,9 @@
         "strikePrice": 1715000,
         "callOption": {
           "open": 2745,
-          "high": 2747,
+<<<<<<< HEAD
+          "high":2747,
+>>>>>>> origin/main
           "low": 2745,
           "close": 2285,
           "ltp": 2745,
